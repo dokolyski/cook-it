@@ -1,10 +1,9 @@
 export class Ingredient {
-  _id: string;
+  _id: string | undefined;
   name: string;
   quantity: string;
 
-  constructor(id: string, name: string, quantity: string) {
-    this._id = id;
+  constructor(name: string, quantity: string) {
     this.name = name;
     this.quantity = quantity;
   }

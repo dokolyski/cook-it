@@ -1,0 +1,31 @@
+.field {
+  width: 100%;
+  margin: 10px 0;
+  place-self: center;
+}
+
+.col-name {
+  width: calc(40% - 25px) !important;
+  min-width: 30%;
+}
+
+.col-quantity {
+  width: calc(45% - 25px) !important;
+  min-width: 35%;
+}
+
+.col-edit {
+  width: 90px !important;
+  text-align: center;
+}
+
+.button-group {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+}
+
+.input-group {
+  display: grid;
+  grid-row: auto;
+}

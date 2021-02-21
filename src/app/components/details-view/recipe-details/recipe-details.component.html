@@ -1,0 +1,30 @@
+<ng-container *ngIf="recipe != null">
+  <h2>
+    {{recipe.name}}
+    <button (click)="recipeAction.editRecipe(recipe)"  mat-icon-button aria-label="edit">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button (click)="recipeAction.deleteRecipe(recipe)" mat-icon-button aria-label="delete">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </h2>
+  <h3>
+    Estimated preparation time: {{recipe.preparationTimeInMinutes | time }}
+  </h3>
+
+  <p style="text-align: justify">
+    Description: {{recipe.description}}
+  </p>
+
+  <h3>Ingredients:</h3>
+  <ul>
+    <li *ngFor="let ingredient of recipe.ingredients">
+      {{ingredient | ingredient}}
+    </li>
+  </ul>
+
+  <div style="text-align: center">
+
+  </div>
+</ng-container>
+

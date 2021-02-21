@@ -1,0 +1,20 @@
+<h2 class="title" mat-dialog-title>{{data?.isEdit ? 'Edit the necessary ingredient' : 'Add the necessary ingredient'}}</h2>
+<mat-dialog-content class="info-content">
+  <form>
+    <div class="input-group">
+      <mat-form-field class="field">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="nameControl">
+      </mat-form-field>
+      <mat-form-field class="field">
+        <mat-label>Quantity</mat-label>
+        <input matInput [formControl]="quantityControl">
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button [mat-dialog-close]="null">Cancel</button>
+  <button mat-button (click)="addIngredient()">Save</button>
+</mat-dialog-actions>
+

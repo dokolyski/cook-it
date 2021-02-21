@@ -1,0 +1,70 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+$navbar-height: 64px;
+$toggle-border-width: 2px;
+$main-content-max-width: 700px;
+
+.sidenav {
+  width: 45%;
+  min-width: 240px;
+  max-width: 400px;
+  height: calc(100vh - #{$navbar-height});
+  position: fixed;
+  top: #{$navbar-height};
+  margin-top: 0;
+}
+
+.sidenav-grid {
+  display: grid;
+  grid-template-columns: auto calc(24px + 2 * #{$toggle-border-width});
+}
+
+.toggle-button {
+  width: 100%;
+  min-height: calc(100vh - (#{$navbar-height} + 2 * #{$toggle-border-width}));
+}
+
+.main-container {
+  position: relative;
+  top: $navbar-height;
+  width: 100%;
+}
+
+.detail-content {
+  min-height: calc(100vh - #{$navbar-height});
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.detail-container {
+  padding: 10px;
+  width: 70%;
+  max-width: $main-content-max-width;
+}
+
+.toggle-container {
+  display: grid;
+  align-items: center;
+  min-height: calc(100vh - (#{$navbar-height} + 2 * #{$toggle-border-width}));
+  align-self: center;
+  text-align: right;
+  border: $toggle-border-width solid #ccc;
+  background-color: #e3e3e3;
+}
+
+.toggle-open {
+  position: fixed;
+  top: $navbar-height;
+  left: 0;
+}
+
+.toggle-grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 24px auto;
+}

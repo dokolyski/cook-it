@@ -1,0 +1,22 @@
+.container {
+  padding: 15px;
+}
+
+.filter {
+  width: calc(100% - 30px);
+}
+
+.list:focus {
+  outline: 0;
+}
+
+.viewport {
+  height: calc(100vh - 270px);
+  width: 100%;
+  border: 1px solid black;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+

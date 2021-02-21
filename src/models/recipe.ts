@@ -1,15 +1,14 @@
 import {Ingredient} from 'src/models/ingredient';
 
 export class Recipe {
-  _id: string;
+  _id: string | undefined;
   name: string;
   preparationTimeInMinutes: number;
   description: string;
   ingredients: Ingredient[];
 
 
-  constructor(id: string, name: string, preparationTimeInMinutes: number, description: string, ingredients: Ingredient[]) {
-    this._id = id;
+  constructor(name: string, preparationTimeInMinutes: number, description: string, ingredients: Ingredient[]) {
     this.name = name;
     this.preparationTimeInMinutes = preparationTimeInMinutes;
     this.description = description;

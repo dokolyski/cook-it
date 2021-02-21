@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Recipe list:</h2>
+  <form>
+    <mat-form-field class="filter">
+      <mat-label>Find a recipe...</mat-label>
+      <input matInput [formControl]="filterControl">
+    </mat-form-field>
+  </form>
+  <mat-action-list>
+    <button mat-list-item (click)="recipeAction.addNewRecipe()">
+      <span>Add new recipe</span>
+      <mat-icon mat-list-icon>add</mat-icon>
+    </button>
+    <cdk-virtual-scroll-viewport itemSize="50px" class="viewport">
+      <button style="height: 50px" (click)="recipeAction.showRecipe(recipe)" mat-list-item *cdkVirtualFor="let recipe of recipesDataSource">
+          <span>
+            {{recipe.name}}
+          </span>
+        <span class="spacer"></span>
+        <button (click)="$event.stopImmediatePropagation(); recipeAction.editRecipe(recipe)"  mat-icon-button aria-label="edit">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="$event.stopImmediatePropagation(); recipeAction.deleteRecipe(recipe)" mat-icon-button aria-label="delete">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </button>
+    </cdk-virtual-scroll-viewport>
+  </mat-action-list>
+</div>
+
